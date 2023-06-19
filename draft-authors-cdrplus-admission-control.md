@@ -40,13 +40,21 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 # Scope
 
+This document specifies methods for the following:
+  - Establishment of trust between two parties, notably Data Holder and Data Recipient
+  - Centralised Certificate Authority to ensure transport level enforcement of ecosystem trust
 
 # Terms & Definitions
 
 TODO
 
-# 
+# Introduction
+
+This specification is currently a placeholder. Please refer to the Register APIs and Security Profile sections of the [@!CDS] until this document evolves further.
 
 {backmatter}
 
 <reference anchor="CDRPLUS-INFOSEC-BASELINE" target="https://cdrplus.github.io/cdrplus-infosec-baseline/draft-cdrplus-infosec-baseline.html"> <front><title>CDR+ Security Profile: Baseline</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
+
+<reference anchor="CDS" target="https://consumerdatastandardsaustralia.github.io/standards"><front><title>Consumer Data Standards (CDS)</title><author><organization>Data Standards Body (Treasury)</organization></author></front> </reference>
+
