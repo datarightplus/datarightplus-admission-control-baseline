@@ -41,16 +41,76 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 # Scope
 
 This document specifies methods for the following:
+  - Dynamic Client Registration using trust asserted by the Ecosystem Authority
+  - Participant management through a centralised API
+  - Transport level security managed by the Ecosystem Authority
+
+# Terms & Definitions
+
+CDR
+:  Consumer Data Right
+
+Data Holder
+: A Data Holder is a party that holds consumer data for which sharing is to be conducted and for which their customer, the Consumer, participates in the authorisation process initiated by a Data Recipient. Please refer to the expanded description of Data Holder within this document.
+
+Data Recipient
+: A Data Recipient is a party that receives consumer data from a Data Holder. This occurs by way of a Software Product.
+
+Ecosystem Authority
+: The Ecosystem Authority represents the designated arbiter of trust between Data Holders, Data Recipients and the Consumer. Within the Australian Consumer Data Right this is the Australian Competition and Consumer Commission.
+
+Software Product
+: A Software Product represents the technology infrastructure, ostensibly a client registration with an authorisation server, operated by a Data Recipient for the purposes of receiving consumer data.
+
+Software Product Identifier
+: TODO
+
+# Introduction
+
+This specification is currently a placeholder. Please refer to the Register APIs and Security Profile sections of the [@!CDS] until this document evolves further.
+
+## Data Recipient and Accreditation
+
+Ecosystems in alignment with this specification, notably the CDR, perform external validation of participant capabilities, particularly of Data Recipients.
+
+This occurs by way of a combination of Ecosystem Authority verification, external technology audit standards (notably ASAE3150) and legal assertions by Data Recipients carrying higher accreditation as to the suitability of new subordinate Data Recipients.
+
+As a result of this validation Data Recipients are granted an accreditation status which in turn influences the authorisation scopes that are made available to their relevant Software Products. Further detail on this process in the context of the CDR can be found within the CDR Rules and within guidelines published on the CDR website.
+
+The subject of accreditation is not intended to be covered by this specification, nor is the broader concept of a Data Recipient. As a consequence this document focuses primarily on the relationship between Data Holder and Software Product with the Ecosystem Authority providing third party assurance with respect to technical admission control.
+
+## Ecosystem Topology
+
+# Ecosystem Authority
+
+The Ecosystem Authority is considered the primary arbiter of trust within the established ecosystem. In order to provide multiple layers of trust the Ecosystem Authority operates a combination of:
+1. A TLS Certificate Authority
+2. A set of APIs representing the ecosystem (effectively a "phone book")
+3. A JWT signing authority for the purposes of asserting permitted authorisation scopes of Software Products
+
+Within an Australian context the ecosystem is the Consumer Data Right and the Ecosystem Authority is the Register operated by the Australian Competition and Consumer Commission.
+
+## Certificate Authority
+
+The Ecosystem Authority SHALL operate a Certificate Authority (CA), in accordance with ??TLS-Spec??.
+
+The Certificate Authority:
+1. **MUST** issue certificates of at least 2048 bits
+2. **MUST** issue certificates using the RSA encryption suite
+3. **MUST** enforce the certificate profile as specified for each participant
+4. **MUST NOT** issue certificates exceeding 365 days
+2. **SHOULD** issue participant certificates via an Intermediate CA
+
+## Authentication
+
+For endpoints requiring authentication the Ecosystem Authority **SHALL** authenticate the confidential client using `private_key_jwt` specified in section 9 of [@!OIDC-Core].
+
   - Establishment of trust between two parties, notably Data Holder and Data Recipient
   - Centralised Certificate Authority to ensure transport level enforcement of ecosystem trust
 
 # Terms & Definitions
 
 TODO
-
-# Introduction
-
-This specification is currently a placeholder. Please refer to the Register APIs and Security Profile sections of the [@!CDS] until this document evolves further.
 
 {backmatter}
 
