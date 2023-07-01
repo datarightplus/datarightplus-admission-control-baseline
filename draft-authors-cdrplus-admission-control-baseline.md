@@ -1,11 +1,11 @@
 %%%
-Title = "CDR Plus: Admission Control"
+Title = "CDR Plus: Admission Control Baseline"
 area = "Internet"
 workgroup = "cdrplus-parity"
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-authors-cdrplus-admission-control-latest"
+value = "draft-authors-cdrplus-admission-control-baseline-latest"
 stream = "IETF"
 status = "experimental"
 
