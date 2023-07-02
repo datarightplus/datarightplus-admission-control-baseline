@@ -1,5 +1,5 @@
 %%%
-Title = "CDR Plus: Admission Control Baseline"
+Title = "CDR+: Admission Control: Baseline"
 area = "Internet"
 workgroup = "cdrplus-parity"
 
