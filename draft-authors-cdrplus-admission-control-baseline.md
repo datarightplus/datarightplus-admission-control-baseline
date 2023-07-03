@@ -41,9 +41,10 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 # Scope
 
 This document specifies methods for the following:
-  - Dynamic Client Registration using trust asserted by the Ecosystem Authority
-  - Participant management through a centralised API
-  - Transport level security managed by the Ecosystem Authority
+
+- Dynamic Client Registration using trust asserted by the Ecosystem Authority
+- Participant management through a centralised API
+- Transport level security managed by the Ecosystem Authority
 
 # Terms & Definitions
 
@@ -84,6 +85,7 @@ The subject of accreditation is not intended to be covered by this specification
 # Ecosystem Authority
 
 The Ecosystem Authority is considered the primary arbiter of trust within the established ecosystem. In order to provide multiple layers of trust the Ecosystem Authority operates a combination of:
+
 1. A TLS Certificate Authority
 2. A set of APIs representing the ecosystem (effectively a "phone book")
 3. A JWT signing authority for the purposes of asserting permitted authorisation scopes of Software Products
@@ -95,22 +97,19 @@ Within an Australian context the ecosystem is the Consumer Data Right and the Ec
 The Ecosystem Authority SHALL operate a Certificate Authority (CA), in accordance with ??TLS-Spec??.
 
 The Certificate Authority:
+
 1. **MUST** issue certificates of at least 2048 bits
 2. **MUST** issue certificates using the RSA encryption suite
 3. **MUST** enforce the certificate profile as specified for each participant
 4. **MUST NOT** issue certificates exceeding 365 days
-2. **SHOULD** issue participant certificates via an Intermediate CA
+5. **SHOULD** issue participant certificates via an Intermediate CA
 
 ## Authentication
 
 For endpoints requiring authentication the Ecosystem Authority **SHALL** authenticate the confidential client using `private_key_jwt` specified in section 9 of [@!OIDC-Core].
 
-  - Establishment of trust between two parties, notably Data Holder and Data Recipient
-  - Centralised Certificate Authority to ensure transport level enforcement of ecosystem trust
-
-# Terms & Definitions
-
-TODO
+- Establishment of trust between two parties, notably Data Holder and Data Recipient
+- Centralised Certificate Authority to ensure transport level enforcement of ecosystem trust
 
 {backmatter}
 
