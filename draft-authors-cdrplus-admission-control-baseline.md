@@ -104,6 +104,8 @@ The Certificate Authority:
 4. **MUST NOT** issue certificates exceeding 365 days
 5. **SHOULD** issue participant certificates via an Intermediate CA
 
+<{{yolo.json}}
+
 ## Authentication
 
 For endpoints requiring authentication the Ecosystem Authority **SHALL** authenticate the confidential client using `private_key_jwt` specified in section 9 of [@!OIDC-Core].
