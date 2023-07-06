@@ -5,7 +5,7 @@
 cdrplus-parity                                                    S. Low
 Internet-Draft                                                 B. Kolera
 Intended status: Experimental                                    Biza.io
-Expires: 4 January 2024                                      3 July 2023
+Expires: 7 January 2024                                      6 July 2023
 
 
                     CDR+ Admission Control: Baseline
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2024.
+   This Internet-Draft will expire on 7 January 2024.
 
 Copyright Notice
 
@@ -171,6 +171,8 @@ Table of Contents
    4.  MUST NOT issue certificates exceeding 365 days
 
    5.  SHOULD issue participant certificates via an Intermediate CA
+
+   This is some yolo text
 
 4.2.  Authentication
 
