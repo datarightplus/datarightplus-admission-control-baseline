@@ -2,14 +2,14 @@
 
 
 
-cdrplus-parity                                                    S. Low
+datarightplus-parity                                              S. Low
 Internet-Draft                                                 B. Kolera
 Intended status: Experimental                                    Biza.io
-Expires: 3 January 2024                                      2 July 2023
+Expires: 2 February 2024                                   1 August 2023
 
 
-                    CDR+ Admission Control: Baseline
-        draft-authors-cdrplus-admission-control-baseline-latest
+                    DR+ Admission Control: Baseline
+     draft-authors-datarightplus-admission-control-baseline-latest
 
 Abstract
 
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 January 2024.
+   This Internet-Draft will expire on 2 February 2024.
 
 Copyright Notice
 
@@ -63,16 +63,19 @@ Table of Contents
    4.  Ecosystem Authority
      4.1.  Certificate Authority
      4.2.  Authentication
-   5.  Terms & Definitions
-   6.  Normative References
+   5.  Normative References
    Authors' Addresses
 
 1.  Scope
 
-   This document specifies methods for the following: - Dynamic Client
-   Registration using trust asserted by the Ecosystem Authority -
-   Participant management through a centralised API - Transport level
-   security managed by the Ecosystem Authority
+   This document specifies methods for the following:
+
+   *  Dynamic Client Registration using trust asserted by the Ecosystem
+      Authority
+
+   *  Participant management through a centralised API
+
+   *  Transport level security managed by the Ecosystem Authority
 
 2.  Terms & Definitions
 
@@ -137,11 +140,15 @@ Table of Contents
 
    The Ecosystem Authority is considered the primary arbiter of trust
    within the established ecosystem.  In order to provide multiple
-   layers of trust the Ecosystem Authority operates a combination of: 1.
-   A TLS Certificate Authority 2.  A set of APIs representing the
-   ecosystem (effectively a "phone book") 3.  A JWT signing authority
-   for the purposes of asserting permitted authorisation scopes of
-   Software Products
+   layers of trust the Ecosystem Authority operates a combination of:
+
+   1.  A TLS Certificate Authority
+
+   2.  A set of APIs representing the ecosystem (effectively a "phone
+       book")
+
+   3.  A JWT signing authority for the purposes of asserting permitted
+       authorisation scopes of Software Products
 
    Within an Australian context the ecosystem is the Consumer Data Right
    and the Ecosystem Authority is the Register operated by the
@@ -152,11 +159,20 @@ Table of Contents
    The Ecosystem Authority SHALL operate a Certificate Authority (CA),
    in accordance with ??TLS-Spec??.
 
-   The Certificate Authority: 1.  MUST issue certificates of at least
-   2048 bits 2.  MUST issue certificates using the RSA encryption suite
+   The Certificate Authority:
+
+   1.  MUST issue certificates of at least 2048 bits
+
+   2.  MUST issue certificates using the RSA encryption suite
+
    3.  MUST enforce the certificate profile as specified for each
-   participant 4.  MUST NOT issue certificates exceeding 365 days 2.
-   SHOULD issue participant certificates via an Intermediate CA
+       participant
+
+   4.  MUST NOT issue certificates exceeding 365 days
+
+   5.  SHOULD issue participant certificates via an Intermediate CA
+
+   This is some yolo text
 
 4.2.  Authentication
 
@@ -170,11 +186,7 @@ Table of Contents
    *  Centralised Certificate Authority to ensure transport level
       enforcement of ecosystem trust
 
-5.  Terms & Definitions
-
-   TODO
-
-6.  Normative References
+5.  Normative References
 
    [CDS]      Data Standards Body (Treasury), "Consumer Data Standards
               (CDS)", <https://consumerdatastandardsaustralia.github.io/
