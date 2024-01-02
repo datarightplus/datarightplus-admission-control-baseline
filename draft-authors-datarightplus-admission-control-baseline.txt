@@ -1,0 +1,215 @@
+
+
+
+
+datarightplus-parity                                              S. Low
+Internet-Draft                                                 B. Kolera
+Intended status: Experimental                                    Biza.io
+Expires: 2 February 2024                                   1 August 2023
+
+
+                    DR+ Admission Control: Baseline
+     draft-authors-datarightplus-admission-control-baseline-latest
+
+Abstract
+
+   Describes the Ecosystem Authority and mechanisms for controlling
+   admission into a Consumer Data Right aligned ecosystem.
+
+Notational Conventions
+
+   The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in [RFC2119].
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 2 February 2024.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Scope
+   2.  Terms & Definitions
+   3.  Introduction
+     3.1.  Data Recipient and Accreditation
+     3.2.  Ecosystem Topology
+   4.  Ecosystem Authority
+     4.1.  Certificate Authority
+     4.2.  Authentication
+   5.  Normative References
+   Authors' Addresses
+
+1.  Scope
+
+   This document specifies methods for the following:
+
+   *  Dynamic Client Registration using trust asserted by the Ecosystem
+      Authority
+
+   *  Participant management through a centralised API
+
+   *  Transport level security managed by the Ecosystem Authority
+
+2.  Terms & Definitions
+
+   CDR  Consumer Data Right
+
+   Data Holder  A Data Holder is a party that holds consumer data for
+      which sharing is to be conducted and for which their customer, the
+      Consumer, participates in the authorisation process initiated by a
+      Data Recipient.  Please refer to the expanded description of Data
+      Holder within this document.
+
+   Data Recipient  A Data Recipient is a party that receives consumer
+      data from a Data Holder.  This occurs by way of a Software
+      Product.
+
+   Ecosystem Authority  The Ecosystem Authority represents the
+      designated arbiter of trust between Data Holders, Data Recipients
+      and the Consumer.  Within the Australian Consumer Data Right this
+      is the Australian Competition and Consumer Commission.
+
+   Software Product  A Software Product represents the technology
+      infrastructure, ostensibly a client registration with an
+      authorisation server, operated by a Data Recipient for the
+      purposes of receiving consumer data.
+
+   Software Product Identifier  TODO
+
+3.  Introduction
+
+   This specification is currently a placeholder.  Please refer to the
+   Register APIs and Security Profile sections of the [CDS] until this
+   document evolves further.
+
+3.1.  Data Recipient and Accreditation
+
+   Ecosystems in alignment with this specification, notably the CDR,
+   perform external validation of participant capabilities, particularly
+   of Data Recipients.
+
+   This occurs by way of a combination of Ecosystem Authority
+   verification, external technology audit standards (notably ASAE3150)
+   and legal assertions by Data Recipients carrying higher accreditation
+   as to the suitability of new subordinate Data Recipients.
+
+   As a result of this validation Data Recipients are granted an
+   accreditation status which in turn influences the authorisation
+   scopes that are made available to their relevant Software Products.
+   Further detail on this process in the context of the CDR can be found
+   within the CDR Rules and within guidelines published on the CDR
+   website.
+
+   The subject of accreditation is not intended to be covered by this
+   specification, nor is the broader concept of a Data Recipient.  As a
+   consequence this document focuses primarily on the relationship
+   between Data Holder and Software Product with the Ecosystem Authority
+   providing third party assurance with respect to technical admission
+   control.
+
+3.2.  Ecosystem Topology
+
+4.  Ecosystem Authority
+
+   The Ecosystem Authority is considered the primary arbiter of trust
+   within the established ecosystem.  In order to provide multiple
+   layers of trust the Ecosystem Authority operates a combination of:
+
+   1.  A TLS Certificate Authority
+
+   2.  A set of APIs representing the ecosystem (effectively a "phone
+       book")
+
+   3.  A JWT signing authority for the purposes of asserting permitted
+       authorisation scopes of Software Products
+
+   Within an Australian context the ecosystem is the Consumer Data Right
+   and the Ecosystem Authority is the Register operated by the
+   Australian Competition and Consumer Commission.
+
+4.1.  Certificate Authority
+
+   The Ecosystem Authority SHALL operate a Certificate Authority (CA),
+   in accordance with ??TLS-Spec??.
+
+   The Certificate Authority:
+
+   1.  MUST issue certificates of at least 2048 bits
+
+   2.  MUST issue certificates using the RSA encryption suite
+
+   3.  MUST enforce the certificate profile as specified for each
+       participant
+
+   4.  MUST NOT issue certificates exceeding 365 days
+
+   5.  SHOULD issue participant certificates via an Intermediate CA
+
+   This is some yolo text
+
+4.2.  Authentication
+
+   For endpoints requiring authentication the Ecosystem Authority SHALL
+   authenticate the confidential client using private_key_jwt specified
+   in section 9 of [OIDC-Core].
+
+   *  Establishment of trust between two parties, notably Data Holder
+      and Data Recipient
+
+   *  Centralised Certificate Authority to ensure transport level
+      enforcement of ecosystem trust
+
+5.  Normative References
+
+   [CDS]      Data Standards Body (Treasury), "Consumer Data Standards
+              (CDS)", <https://consumerdatastandardsaustralia.github.io/
+              standards>.
+
+   [OIDC-Core]
+              Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, "OpenID Connect Core 1.0 incorporating
+              errata set 1", 8 November 2014,
+              <http://openid.net/specs/openid-connect-core-1_0.html>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+Authors' Addresses
+
+   Stuart Low
+   Biza.io
+   Email: stuart@biza.io
+
+
+   Ben Kolera
+   Biza.io
+   Email: bkolera@biza.io
