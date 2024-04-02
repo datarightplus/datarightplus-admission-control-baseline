@@ -194,11 +194,12 @@ Table of Contents
 
 4.3.1.  Authorisation Server
 
-   The Ecosystem Directory: 1.  SHALL make available an OAuth 2.0
-   [RFC6749] authorisation server 1.  SHALL authenticate the
-   confidential client using private_key_jwt specified in section 9 of
-   [OIDC-Core] 1.  SHALL support discovery, as defined in
-   [OIDC-Discovery];
+   The Ecosystem Directory:
+
+   1.  SHALL make available an OAuth 2.0 [RFC6749] authorisation server
+   2.  SHALL authenticate the confidential client using private_key_jwt
+       specified in section 9 of [OIDC-Core]
+   3.  SHALL support discovery, as defined in [OIDC-Discovery];
 
    The means by which participants acquires their relevant client_id is
    outside the scope of this document.
@@ -334,11 +335,13 @@ Table of Contents
 
 4.4.2.  Authorisation Server
 
-   The SSA Authority: 1.  SHALL make available an OAuth 2.0 [RFC6749]
-   authorisation server 1.  SHALL authenticate the confidential client
-   using private_key_jwt specified in section 9 of [OIDC-Core] 1.  SHALL
-   support discovery, as defined in OpenID Connect Discovery 1.0
-   [OIDC-Discovery];
+   The SSA Authority:
+
+   1.  SHALL make available an OAuth 2.0 [RFC6749] authorisation server
+   2.  SHALL authenticate the confidential client using private_key_jwt
+       specified in section 9 of [OIDC-Core]
+   3.  SHALL support discovery, as defined in OpenID Connect Discovery
+       1.0 [OIDC-Discovery];
 
    The means by which participants acquires their relevant client_id is
    outside the scope of this document.
@@ -381,21 +384,28 @@ Table of Contents
 
    The Provider authorisation server SHALL support [OIDC-DCR].
 
-   In addition, the Provider authorisation server: 1.  SHALL require SSA
-   documents as part of the Client Registration Request outlined in
-   Section 3.1 of [OIDC-DCR] and; 2.  SHALL validate provided SSA
-   documents as per [SSA Attributes] and; 3.  SHALL verify the signature
-   of the SSA using the [SSA Authority JWKS] endpoint; 4.  SHALL support
-   client management endpoints described in Section 2 of [RFC7592]; 5.
-   SHALL authenticate Initiators using private_key_jwt and an Ecosystem
-   Authority defined scope value (typically cdr:registration); 6.  SHALL
-   require MTLS for all DCR related endpoints; 7.  SHALL NOT permit
-   multiple client registrations per Initiator Identifier; 8.  SHALL
-   supply client_id_issued_at in addition to the other REQUIRED fields
-   outlined in section 3.2 [OIDC-DCR]; 9.  SHALL update Initiator
-   statuses, at least every 5 minutes, by polling the GET /cdr-register/
-   v1/{industry}/data-recipients/brands/software-products/status
-   endpoint outlined in [Resource Endpoints]
+   In addition, the Provider authorisation server:
+
+   1.  SHALL require SSA documents as part of the Client Registration
+       Request outlined in Section 3.1 of [OIDC-DCR] and;
+   2.  SHALL validate provided SSA documents as per [SSA Attributes]
+       and;
+   3.  SHALL verify the signature of the SSA using the [SSA Authority
+       JWKS] endpoint;
+   4.  SHALL support client management endpoints described in Section 2
+       of [RFC7592];
+   5.  SHALL authenticate Initiators using private_key_jwt and an
+       Ecosystem Authority defined scope value (typically
+       cdr:registration);
+   6.  SHALL require MTLS for all DCR related endpoints;
+   7.  SHALL NOT permit multiple client registrations per Initiator
+       Identifier;
+   8.  SHALL supply client_id_issued_at in addition to the other
+       REQUIRED fields outlined in section 3.2 [OIDC-DCR];
+   9.  SHALL update Initiator statuses, at least every 5 minutes, by
+       polling the GET /cdr-register/v1/{industry}/data-
+       recipients/brands/software-products/status endpoint outlined in
+       [Resource Endpoints]
 
    Where there are overlapping attributes between the dynamic
    registration request and the provided SSA, the content of the SSA
@@ -403,13 +413,15 @@ Table of Contents
 
 6.  Initiator
 
-   Initiators participating in the ecosystem: 1.  SHALL support endpoint
-   discovery as specified in [OIDC-Discovery] 2.  SHALL support dynamic
-   registration in accordance with [OIDC-DCR] 3.  SHALL retrieve a time-
-   limited SSA, from the [SSA Retrieval Endpoint] and use it as the
-   software_statement attribute for dynamic registration requests 4.
-   SHALL support the client management provisions contained in Section 2
-   [RFC7592]
+   Initiators participating in the ecosystem:
+
+   1.  SHALL support endpoint discovery as specified in [OIDC-Discovery]
+   2.  SHALL support dynamic registration in accordance with [OIDC-DCR]
+   3.  SHALL retrieve a time-limited SSA, from the [SSA Retrieval
+       Endpoint] and use it as the software_statement attribute for
+       dynamic registration requests
+   4.  SHALL support the client management provisions contained in
+       Section 2 [RFC7592]
 
 7.  Implementation Considerations
 
@@ -440,7 +452,8 @@ Table of Contents
               Low, S., "CDR: Sharing Arrangement V1 (00)",
               <https://datarightplus.github.io/datarightplus-sharing-
               arrangement-v1/draft-authors-datarightplus-sharing-
-              arrangement-v1-00>.
+              arrangement-v1-00/draft-authors-datarightplus-sharing-
+              arrangement-v1.html>.
 
    [JWS]      Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", May 2015,
