@@ -50,56 +50,25 @@ This document specifies methods for the following:
 
 # Terms & Definitions
 
-Certificate Practice Statement
-: A statement of the practices that a certification authority (CA) employs in issuing, suspending, revoking, and renewing certificates and providing access to them, in accordance with specific requirements.
-
-CDR
-:  Consumer Data Right
-
-Provider
-: A Provider is a party that holds consumer data for which sharing is to be conducted and for which their customer, the Consumer, participates in the authorisation process initiated by a Initiator. Please refer to the expanded description of Provider within this document.
-
-Initiator
-: A Initiator is a party that receives consumer data from a Provider. This occurs by way of a Software Product.
-
-Ecosystem Authority
-: The Ecosystem Authority represents the designated arbiter of trust between Providers, Initiators and the Consumer. Within the Australian Consumer Data Right this is the Australian Competition and Consumer Commission.
-
-Software Product
-: A Software Product represents the technology infrastructure, ostensibly a client registration with an authorisation server, operated by a Initiator for the purposes of receiving consumer data.
-
-Software Product Identifier
-: TODO
-
-Initiator Base URI
-: TODO
-
-Initiator Identifier
-: TODO
-
-Initiator Brand Identifier
-: TODO
-
-Revocation URI
-: TODO
-
-SSA
-: Software Statement Assertions
-
-Initiator Arrangement Revocation Endpoint (IARE)
-: TODO
-
-Initiator Base URI (IBU)
-: TODO
+This specification utilises the various terms outlined within [@!DATARIGHTPLUS-ROSETTA].
 
 Ecosystem Policy
-: TODO
+: A policy document specific to the ecosystem presented by the Initiator. Within the Australian CDR this is referred to as a data recipients CDR Policy
+
+Initiator Brand Identifier
+: A unique identifier for the brand name which is presented as the owner of the Initiator.
+
+Initiator Entity Identifier
+: A unique identifier for the legal entity related to the Initiator.
+
+Initiator Identifier
+: A unique identifier for the specific Initiator. **SHALL NOT** change throughout the life cycle of the Initiator.
 
 Provider Registration Scope
 : A string value as defined by the relevant ecosystem profile.
 
-# Initiator Entity Identifier
-: TODO
+SSA
+: Relates to a Software Statement Assertion
 
 # Introduction
 
@@ -174,7 +143,9 @@ The means by which participants acquires their relevant `client_id` is outside t
 
 ### Resource Endpoints
 
-The Ecosystem Directory **SHALL** make available an authenticated endpoint secured with a `scope` value of `cdr:register` (or other value specified by the Ecosystem Authority) and accessed via MTLS.
+#### Authenticated Directory Endpoints
+
+The Ecosystem Directory **SHALL** make available MTLS and Bearer token authenticated endpoint secured with a `scope` value of `cdr:register` (or other value specified by the Ecosystem Authority).
 
 As described further in [@!DATARIGHTPLUS-REDOCLY-ID1] the following authenticated endpoints **SHALL** be made available:
 
@@ -182,8 +153,9 @@ As described further in [@!DATARIGHTPLUS-REDOCLY-ID1] the following authenticate
 |-----------------------------------------------------------------------------------|-------|
 | `GET /cdr-register/v1/{industry}/data-holders/brands`                             | `2`   |
 
+#### Public Directory Endpoints
 
-In addition, the Ecosystem Directory **SHALL** deliver the following unauthenticated and generally available endpoints, in accordance with [@!DATARIGHTPLUS-REDOCLY-ID1]:
+The Ecosystem Directory **SHALL** deliver the following unauthenticated and generally available endpoints, in accordance with [@!DATARIGHTPLUS-REDOCLY-ID1]:
 
 | Resource Server Endpoint                                                          | `x-v` |
 |-----------------------------------------------------------------------------------|-------|
@@ -219,7 +191,7 @@ The unsigned SSA is a JSON document containing the following attributes:
 - `tos_uri`: **OPTIONAL** URI referencing the Terms of Service of the Initiator
 - `policy_uri`: **OPTIONAL** URI referencing the Ecosystem Policy of the Initiator
 - `jwks_uri`: **REQUIRED** URI referencing the JSON Web Key Set [@!RFC7517] used by the Initiator for authentication purposes
-- `revocation_uri`: **REQUIRED** URI referencing the ICARE endpoint as specified within [@!DATARIGHTPLUS-INFOSEC-SHARING-V1], if [@!DATARIGHTPLUS-INFOSEC-SHARING-V1] is supported by the Ecosystem
+- `revocation_uri`: **REQUIRED** URI referencing the ICARE endpoint as specified within [@!DATARIGHTPLUS-SHARING-ARRANGEMENT-V1-00], if [@!DATARIGHTPLUS-SHARING-ARRANGEMENT-V1-00] is supported by the Ecosystem
 - `recipient_base_uri`: **REQUIRED** Base URI to use for Initiator provider endpoints
 - `software_id`: **REQUIRED** The Initiator Identifier
 - `software_roles`: **REQUIRED** Role identifier of the Ecosystem. The only permitted value is currently `data-recipient-software-product`
@@ -334,7 +306,7 @@ For MTLS endpoints, all participants **MUST** verify certificates used (client) 
 
 <reference anchor="DATARIGHTPLUS-INFOSEC-BASELINE" target="https://datarightplus.github.io/datarightplus-infosec-baseline/draft-datarightplus-infosec-baseline.html"> <front><title>DataRight+ Security Profile: Baseline</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
 
-<reference anchor="DATARIGHTPLUS-DATA-SHARING-V1-00" target="https://datarightplus.github.io/datarightplus-sharing-arrangement-v1/draft-authors-datarightplus-sharing-arrangement-v1-00"> <front><title>CDR: Sharing Arrangement V1 (00)</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
+<reference anchor="DATARIGHTPLUS-SHARING-ARRANGEMENT-V1-00" target="https://datarightplus.github.io/datarightplus-sharing-arrangement-v1/draft-authors-datarightplus-sharing-arrangement-v1-00"> <front><title>CDR: Sharing Arrangement V1 (00)</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
 
 <reference anchor="CDS" target="https://consumerdatastandardsaustralia.github.io/standards"><front><title>Consumer Data Standards (CDS)</title><author><organization>Data Standards Body (Treasury)</organization></author></front> </reference>
 
