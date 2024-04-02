@@ -135,6 +135,7 @@ The Directory is a combination of protected and generally available endpoints.
 ### Authorisation Server
 
 The Ecosystem Directory:
+
 1. **SHALL** make available an OAuth 2.0 [@!RFC6749] authorisation server
 1. **SHALL** authenticate the confidential client using `private_key_jwt` specified in section 9 of [@!OIDC-Core]
 1. **SHALL** support discovery, as defined in [@!OIDC-Discovery];
@@ -236,6 +237,7 @@ A non-normative example of an unsigned SSA:
 ### Authorisation Server
 
 The SSA Authority:
+
 1. **SHALL** make available an OAuth 2.0 [@!RFC6749] authorisation server
 1. **SHALL** authenticate the confidential client using `private_key_jwt` specified in section 9 of [@!OIDC-Core]
 1. **SHALL** support discovery, as defined in OpenID Connect Discovery 1.0 [@!OIDC-Discovery];
@@ -267,6 +269,7 @@ The Provider authorisation server is required to perform a number of prescribed 
 The Provider authorisation server **SHALL** support [@!OIDC-DCR].
 
 In addition, the Provider authorisation server:
+
 1. **SHALL** require SSA documents as part of the Client Registration Request outlined in Section 3.1 of [@!OIDC-DCR] and;
 2. **SHALL** validate provided SSA documents as per [SSA Attributes] and;
 3. **SHALL** verify the signature of the SSA using the [SSA Authority JWKS] endpoint;
@@ -282,6 +285,7 @@ Where there are overlapping attributes between the dynamic registration request 
 # Initiator
 
 Initiators participating in the ecosystem:
+
 1. **SHALL** support endpoint discovery as specified in [@!OIDC-Discovery]
 2. **SHALL** support dynamic registration in accordance with [@!OIDC-DCR]
 3. **SHALL** retrieve a time-limited SSA, from the [SSA Retrieval Endpoint] and use it as the `software_statement` attribute for dynamic registration requests
@@ -306,7 +310,7 @@ For MTLS endpoints, all participants **MUST** verify certificates used (client) 
 
 <reference anchor="DATARIGHTPLUS-INFOSEC-BASELINE" target="https://datarightplus.github.io/datarightplus-infosec-baseline/draft-datarightplus-infosec-baseline.html"> <front><title>DataRight+ Security Profile: Baseline</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
 
-<reference anchor="DATARIGHTPLUS-SHARING-ARRANGEMENT-V1-00" target="https://datarightplus.github.io/datarightplus-sharing-arrangement-v1/draft-authors-datarightplus-sharing-arrangement-v1-00"> <front><title>CDR: Sharing Arrangement V1 (00)</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
+<reference anchor="DATARIGHTPLUS-SHARING-ARRANGEMENT-V1-00" target="https://datarightplus.github.io/datarightplus-sharing-arrangement-v1/draft-authors-datarightplus-sharing-arrangement-v1-00/draft-authors-datarightplus-sharing-arrangement-v1.html"> <front><title>CDR: Sharing Arrangement V1 (00)</title><author initials="S." surname="Low" fullname="Stuart Low"><organization>Biza.io</organization></author></front> </reference>
 
 <reference anchor="CDS" target="https://consumerdatastandardsaustralia.github.io/standards"><front><title>Consumer Data Standards (CDS)</title><author><organization>Data Standards Body (Treasury)</organization></author></front> </reference>
 
