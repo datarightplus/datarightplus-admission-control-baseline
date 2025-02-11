@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T00:21:29.920649+00:00",
+  "timestamp": "2025-02-11T00:22:12.114525+00:00",
   "repo": "datarightplus/datarightplus-admission-control-baseline",
   "labels": [
     {
@@ -50,5 +50,34 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJxRog86KiS9W",
+      "title": "Upgrade to latest github workflow",
+      "url": "https://github.com/datarightplus/datarightplus-admission-control-baseline/pull/1",
+      "state": "MERGED",
+      "author": "perlboy",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-02-09T00:40:55Z",
+      "updatedAt": "2025-02-09T00:41:57Z",
+      "baseRepository": "datarightplus/datarightplus-admission-control-baseline",
+      "baseRefName": "main",
+      "baseRefOid": "725727bd03d6ed822278e77749946ab053fd69e7",
+      "headRepository": "datarightplus/datarightplus-admission-control-baseline",
+      "headRefName": "upgrade-github-workflow",
+      "headRefOid": "c2b48ee42904515e8f4a54fa8cc401b3fc1723b9",
+      "closedAt": "2025-02-09T00:41:57Z",
+      "mergedAt": "2025-02-09T00:41:57Z",
+      "mergedBy": "perlboy",
+      "mergeCommit": {
+        "oid": "830b7cfa56c98b1c9a1d1ff4a21d83c781473789"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
